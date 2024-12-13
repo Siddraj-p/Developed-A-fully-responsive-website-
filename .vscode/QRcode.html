@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <p>enter your text </p>
+        <input type="text " placeholder="enter the text " id="qrtext">
+
+        <div class="imgbox">
+            <img src=" " alt="image" id="imgsrc">
+
+        </div>
+        <button onclick="cll()"></button>
+    </div>
+
+    <script>
+        cll=()=>{
+            let imgsrc = document.querySelector('.imgsrc')
+            let imgbox = document.querySelector('.imgbox')
+            let qrtext = document.querySelector('.qrtext')
+
+            imgsrc.src=""   
+            imgbox.appendChild(imgsrc); 
+        }
+
+    </script>
+</body>
+</html>

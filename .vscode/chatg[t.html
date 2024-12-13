@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav id="navbar" style="background-color: lightgray; padding: 10px;">
+        <ul>
+          <li id="home">Home</li>
+          <li id="about">About</li>
+          <li id="contact">Contact</li>
+        </ul>
+      </nav>
+      
+      <script>
+        // Event listener on the window in the capturing phase
+        window.addEventListener("click", () => {
+          console.log("Window capturing!");
+        }, true); // true means capture phase
+      
+        // Event listener on the navigation bar
+        document.getElementById("navbar").addEventListener("click", () => {
+          console.log("Navigation bar clicked!");
+        });
+      
+        // Event listener on individual menu items
+        document.getElementById("home").addEventListener("click", () => {
+          console.log("Home clicked");
+        });
+      
+        document.getElementById("about").addEventListener("click", () => {
+          console.log("About clicked");
+        });
+      
+        document.getElementById("contact").addEventListener("click", () => {
+          console.log("Contact clicked");
+        });
+      </script>
+      
+    
+</body>
+</html>

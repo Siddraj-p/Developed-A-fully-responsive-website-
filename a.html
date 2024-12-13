@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .main {
+            width: 500px;
+            height: 400px;
+            background-color: rgb(202, 232, 171);
+            padding: 10px ;            /* background-color: white; */
+        }
+        .app {
+            width: 100%;
+            height: 100%;
+            /* padding: 20px; */
+            border-radius: 30px;
+            /* padding: 10px 40px 40px ; */
+          
+            /* background-color: aliceblue; */
+        }
+        .app h2{
+            margin: 10px;
+            color: azure;
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .app h2 img{
+            width: 90px;
+            height: 60px;
+            border-radius: 20px;
+            object-fit: cover;
+            margin-left: 250px;
+        }
+        .row{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius:30px;
+            padding-left: 30px;
+            margin-bottom: 24px;
+        }
+        
+        input{
+            flex: 1;
+            background: transparent;
+            padding: 10px;
+            border-radius: 25px;
+            font-size: 25px;
+        }
+        button{
+            padding: 6px 10px;
+            border-radius: 25px;
+            border: none;
+            background-color: brown;
+            color: aliceblue;
+            font-size: 20px;
+            /* pointer-events: none; */
+        }
+
+         li{cursor: pointer;
+            list-style: none;
+            font-size: 25px;
+            padding: 10px 20px 10px 40px ;
+        position: relative;
+        }
+
+        li::before{
+            position: relative;
+            content: ' ';
+            width: 28px;
+            position: absolute;
+            height: 28px;
+            border-radius: 50%;
+            top: 12px;
+            left: 8px;
+            background-image: url();
+            background-position: center;
+            background-size: cover;
+        }
+
+        li span{
+            position: absolute;
+            top: 10px;
+           right: 0px;
+            width: 40px;
+            height: 40px;
+            font-size: 25px;
+            color: black;
+            border-radius: 50%;
+            align-item : center;
+        }
+        li span:hover{
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="app">
+            <h2>to -do -app<img src="studio.webp" alt="image"></h2>
+            <div class="row">
+                <input type="text" id="input-box" placeholder="add yours choice">
+                <button onclick="addtask()">add</button>
+                </div>
+                <ui class="list">
+                    <!-- <li>task 1</li>
+                    <li>task 2</li>
+                    <li>task 3</li> -->
+                </ui>
+            <!-- </div> -->
+        </div>
+    </div> 
+
+    <script>
+         var list  = document.querySelector(".list");
+         var ibox  = document.querySelector("#input-box");
+        function addtask(){
+            if(ibox.value === ''){
+             alert("write someghimg ")
+            }
+            else{
+                let li = document.createElement("li")
+                li.innerHTML = ibox.value;
+                list.appendChild(li);
+                let span = document.createElement("span")
+                span.innerHTML = ('\u00d7');
+                li.appendChild(span);
+                                // let li = document.createElement("li");
+                // li .innerHTML = ibox.value;
+                // list.appendChild(li);
+                // let span = document.createElement("span");
+                // span.innerHTML =  "\u00d7";
+                // li.appendChild(span); 
+            }
+                ibox.value = '';
+            }
+
+
+            list.addEventListener('click', function(e){
+                if(e.target.tagName === 'SPAN'){
+                    e. target.parentElement.remove()
+                }
+            } ,false )
+    </script>
+</body>
+
+</html>

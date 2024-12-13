@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        .loader {
+            position: fixed;
+            z-index: 999;
+            background-color: black;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: cursive;
+            transition: opacity 3s ease;
+        }
+
+        .loader h1 {
+            color: transparent;
+            background: linear-gradient(rgb(230, 108, 118), rgb(210, 3, 13), rgba(149, 1, 1, 0.71));
+            font-size: 10vw;
+            -webkit-background-clip: text;
+            opacity: 0;
+            animation: fadeIn 0.5s cubic-bezier(0.25, 0.1, 1,-0.93) forwards, moveAround 3s infinite alternate ease-in-out;
+        }
+
+        .loader h1:nth-child(6) {
+            animation-delay: 4s;
+        }
+
+        .loader h1:nth-child(2) {
+            animation-delay: 1.5s;
+        }
+
+        .loader h1:nth-child(3) {
+            animation-delay: 2s;
+        }
+
+        .loader h1:nth-child(4) {
+            animation-delay: 2.5s;
+        }
+
+        .loader h1:nth-child(5) {
+            animation-delay: 3.5s;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes moveAround {
+            0% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(5px, -5px);
+            }
+            50% {
+                transform: translate(-5px, 5px);
+            }
+            75% {
+                transform: translate(5px, 5px);
+            }
+            100% {
+                transform: translate(-5px, -5px);
+            }
+        }
+
+        .image-slider {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            overflow: hidden;
+            z-index: 1000; /* Ensure it appears above the loader */
+            pointer-events: none; /* Allow clicks to pass through */
+            display: none; /* Initially hidden */
+        }
+
+        .image-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            animation: moveImage 5s linear forwards; /* Adjust duration as needed */
+        }
+
+        @keyframes moveImage {
+            0% {
+                transform: translate(100vw, 100vh);
+            }
+            100% {
+                transform: translate(-100vw, -100vh);
+            }
+        }
+
+        .main {
+            position: relative;
+            z-index: 10;
+        }
+
+        .page1 {
+            width: 100%;
+            min-height: 100vh;
+            font-size: 5vw;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+        }
+
+        .page2 {
+            z-index: 10;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+
+        .page2 img {
+            width: 80%;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="loader">
+        <h1>B</h1>
+        <h1>R</h1>
+        <h1>A</h1>
+        <h1>N</h1>
+        <h1>D</h1>
+        <h1>S</h1> 
+    </div>
+    <div class="image-slider">
+        <img src="coloring.jpeg" alt="Image 1">
+        <img src="coloring1.webp" alt="Image 2">
+        <img src="path/to/your/image3.jpg" alt="Image 3">
+        <!-- Add more images as needed -->
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var loader = document.querySelector(".loader");
+            var imageSlider = document.querySelector(".image-slider");
+
+            // Wait for the loader animation to complete
+            loader.addEventListener('transitionend', function() {
+                // Hide loader and show image slider
+                loader.style.display = 'none'; // Hide loader completely
+                imageSlider.style.display = 'flex'; // Show image slider
+            }, { once: true }); // Ensure the event listener is only triggered once
+
+            // Optional: If using a delay for loader fade-out
+            setTimeout(function() {
+                loader.style.opacity = '0'; // Fade out loader
+            }, 3000); // Match this with the loader's animation duration
+        });
+    </script>
+</body>
+
+</html>

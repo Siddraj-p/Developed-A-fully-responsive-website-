@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(123, 198, 142);
+        }
+
+        .container {
+            width: 80%;
+            height: 80%;
+            background-color: aliceblue;
+        }
+
+        .ptop {
+            padding: 0px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100px;
+            background-color: rgb(2, 83, 56);
+        }
+
+        .elem {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .box {
+            display: flex;
+            align-items: center;
+            width: 10%;
+            height: 10%;
+            background-color: azure;
+            height: 10px;
+            padding: 10px 5px;
+            font-size: 20px;
+            color: rgb(23, 209, 29);
+            border-radius: 10px;
+
+        }
+
+        h4 {
+            font-weight: 500;
+            font-size: 30px;
+        }
+
+        .bubble:hover {
+            background-color: rgba(0, 128, 0, 0.607);
+        }
+
+        .cont {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: calc(100%-100px);
+            flex-wrap: wrap;
+
+        }
+
+        .bubble {
+            height: 50px;
+            width: 50px;
+            background-color: rgb(16, 110, 79);
+            border-radius: 50%;
+            display: grid;
+            margin: 10px;
+            place-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="ptop">
+                <div class="elem">
+                    <h4> Hit </h4>
+                    <div id="hitval" class="box"></div>
+                </div>
+                <div class="elem">
+                    <h4> time </h4>
+                    <div id="timerval" class="box"></div>
+                </div>
+                <div class="elem">
+                    <h4> score </h4>
+                    <div id="scorecard" class="box"></div>
+                </div>
+            </div>
+
+            <div class="cont">
+            </div>
+        </div>
+    </div>
+    <script>
+
+        bubble = () => {
+            var content = ''
+            for (i = 0; i < 70; i++) {
+                var ran = Math.floor(Math.random() * 10);
+                content += `<div class="bubble">${ran}</div>`;
+            }
+            document.querySelector('.cont').innerHTML = content;
+        }
+        bubble();
+
+
+        time = 60;
+        function runtime() {
+            var timer = setInterval(function () {
+                if (time > 0) {
+                    time--;
+                }
+                else {
+                    clearInterval(timer);
+                    // location.reload();
+                }
+                document.querySelector('#timerval').textContent = time;
+            }, 1000);
+        }
+        runtime();//bubble creation
+
+
+
+        var ht = 0;
+        function newHit() {
+            ht = Math.floor(Math.random() * 10);
+            document.querySelector('#hitval').textContent = ht;
+        }
+        newHit();//new hoit number 
+
+
+
+        score = 0;
+        function incscore() {
+            score += 10
+            // var rn = Math.floor(Math.random()*10);
+            document.querySelector('#scorecard').textContent = score;
+        }
+        incscore();//inscrease the score 
+
+
+
+        document.querySelector('.cont').addEventListener('click', function (dets) {
+            var clicknum = Number(dets.target.textContent);
+            if (clicknum === ht) {
+                // console.log("hey buiddy ")
+                incscore();
+                newHit();
+                // runtime();   
+            }
+        })
+    </script>
+</body>
+
+</html>

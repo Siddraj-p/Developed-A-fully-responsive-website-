@@ -1,0 +1,284 @@
+        /* @font-face {
+            font-family: new;
+            /* src: url(C:\Users\Dell\Desktop\New folder (2)\NeueHaasDisplayMediu -Copy.ttf); */
+        /* } */
+        
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family:'new';
+            }
+            html,body{
+                width: 100%;
+                height:  100%;
+            }
+
+            .page1{
+                width: 100%;
+                min-height: 100vh;
+                background-color: #6f1af9;
+                /* padding: 2vw 1vw; */
+                position: relative;
+                }
+        
+            .nav{
+                width: 100%;
+                /* padding: 2vw 2vw  ; */
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+                z-index: 100;
+            }
+
+            .nav-part2 {
+                display: flex;
+                align-items: center;
+                gap:5px;
+            }
+
+            .nav-part2 h4{
+                position: relative;
+                padding: 10px 20px ;
+                border: 1px solid #dbd3d3;
+                border-radius: 20px;
+                font-size: 18px;
+                color: #000000f8;
+                font-weight: 600;
+                transition: all ease 0.1s;    
+                position: relative;
+                z-index: 1;
+                overflow: hidden;
+            }
+            .nav-part2   h4::after{
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.869);
+                border-radius: 25px;
+                left: 0px;
+                bottom: -100%;
+                transition: all ease 0.4s;
+            }
+            
+                .nav-part2 h4:hover::after {
+                    bottom: 0%;
+                    border-radius: 25px;
+                }
+                .nav-part2 h4 a{
+                    text-decoration: none;
+                    color: #000000f8;
+                    z-index: 9;
+                    position: relative;
+                }
+                    
+        .nav-part2 h4:hover a{
+            color: #dbd3d3;
+        }
+
+        .center{
+            height: 65vh;
+            width: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            /* border-bottom: 2px solid black;
+            border-left: 2px solid black; */
+            border-radius: 20px;
+
+
+            /* padding-bottom: 2.5vw 2.5vw; */
+            /* margin-top: auto; */
+            /* background-color:  #ece9e5;; */
+            /* boredre property  */
+            /* border: 2px solide rgb(212, 239, 195);
+            border-radius: 30px;
+            box-shadow: 2px 2px 2px 2px rgb(186, 159, 159), inset -4px -4px 3px 3px rgb(186, 159, 159); */
+        }
+
+        .left h2{
+            width: 26vw;
+            /* padding: 20px; */
+            /* font-weight: 700;   */
+            font-size: 1.8vw;  
+            line-height: 2vw;
+            padding-left:10px ;
+        }
+        .right h1{
+            /* font-weight: 700;   */   
+            /* padding: 10px; */
+            line-height: 8vw;
+            font-size:6vw;
+            text-align: right; 
+            background-image: url('coloring.jpeg'); 
+            background-size: cover; 
+            /* background-position: center; Center the image within the text */
+            background-repeat: no-repeat;
+            overflow: hidden; 
+            background-clip: text; 
+            -webkit-background-clip: text; 
+            color: transparent; 
+        }
+
+        video{
+            position: relative;
+            margin-top: 6vw;
+            border-radius: 20px;
+            position: relative;
+            border-radius: 30px;
+            width: 98%;
+            /* padding: 20px; */
+            height: auto;
+            /* margin:0 1%; */
+            border-bottom: 2px solid red;
+
+        }
+/* 
+        .heroshape{
+            width: 46vw;
+            height: 40vh;
+            right: 0px;
+            height: 65vh;
+            position: absolute;
+
+            
+        }
+        .hero1{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-top-left-radius: 50%;
+            border-bottom-left-radius: 50%;
+            background-color: rgb(228, 101, 16);
+            filter: blur(20px);
+            animation-name: part2;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-direction: alternate;
+
+        }
+
+        .hero2{
+            width: 100%;
+            height: 100%;
+            border-top-left-radius: 50%;
+            background-color: rgb(225, 76, 22);
+            border-radius: 40%;
+            filter: blur(20px);
+            position: absolute;
+            animation-name: part2;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-direction: alternate;
+
+        } 
+        .hero3{
+            width: 100%;
+            height: 100%;
+        border-radius: 50%;
+            background-color: rgb(241, 95, 27);
+            filter: blur(20px);
+            position: absolute;
+            /* animation: part3 3s linear infinite; */
+            /* animation-name: part3;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-direction: alternate;    }
+
+        @keyframes part1{
+            from{
+                transform: translate(55%,-5%) ;
+            }
+            to{
+                transform: translate(-10%,10%) ;
+            }
+
+        }@keyframes part2 {
+            from{
+                transform: translate(5%,-5%) ;
+            }
+            to{
+                transform: translate(-20%,20%) ;
+            }
+        }
+
+        @keyframes part3 {
+            from{
+                transform: translate (55%,-3%);
+            }
+            to{
+                transform: translate (0%,15%);
+            }
+        }  */
+
+        /*page number two  */
+        /* .page2{
+        min-height: 100vh;
+        width: 100%;
+        background-color: #6f1af9; */
+        /* margin-top: 5vw; */
+        /* padding-top: 8vw;
+        }
+
+
+        marquee {
+          margin-top: 3vw;
+              overflow: hidden;
+            white-space: nowrap; 
+            width: 100%; 
+            font-size: 40px;
+            position: relative;
+            display: inline-block;
+            display: flex;             
+            align-items: center; 
+        } */
+/* 
+        marquee h2 {
+            display: inline-block; 
+            font-size:100px; */
+
+            /* backgrounf image  */
+                /* background-image: url("multi2.jpeg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-clip: text; */
+                /*  where the background of an element is visible. It tells the browser how to "clip" or cut
+                off the background relative to the element's different parts. */
+                /* -webkit-background-clip: text;
+                color: transparent;
+                -webkit-text-stroke: 2px black; */
+                    /* stroke means adding the boredre on the text */
+        }
+
+        
+    
+        
+
+        /* .gola{
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: rgba(255, 47, 0, 0.939); */
+            /* making it AS a gradient boredreas imn the  story in instagram */
+            /* border: 2px solid black; */
+            /* background:linear-gradient( rgb(240, 46, 12) ,rgb(237, 237, 8) ,rgb(33, 22, 235),rgb(229, 8, 229),grey,rgb(8, 236, 8)); */
+        }
+        /* .gola img{
+            width:60px ;
+            height: 60px;
+            margin: 5px;
+            border: 2px solid black;
+            border-radius: 50%;
+        } */
+
+        .page2-bottom{
+            height: 60vh;
+            background-color: aqua;
+        }
+ */
